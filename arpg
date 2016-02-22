@@ -1,0 +1,35 @@
+#! /usr/bin/ruby
+
+require 'optparse'
+params = ARGV.getopts("n:","t:")
+
+class Template < Struct.new(:name)
+end
+
+class ProjectGenerator < Struct.new(:target_dir,:project_name,:template)
+	
+	def generate
+		code_dir = File::dirname(code_path)
+		template_dir = code_dir + "/tmp/" + template.name + "/"
+		begin
+			system("mkdir #{project_name}")
+			system("cp #{template_dir}/* #{target_dir}/#{project_name} -r")
+		rescue
+		end
+	end
+	
+	private	
+	def code_path
+		path = __FILE__
+		if File.exists?(path) && File.ftype(path) == 'link' then
+			link = File.readlink(path)
+			path= File.expand_path(link, File.dirname(path))
+		end
+	end
+end
+
+if params["t"] == nil
+	params["t"] = "default"
+end
+
+project_generator = ProjectGenerator.new(Dir::pwd, params["n"], Template.new(params["t"])).generate

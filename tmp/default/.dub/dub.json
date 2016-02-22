@@ -1,0 +1,17 @@
+{
+	"dub": {
+		"lastUpgrade": "2016-02-20T23:01:41.516573",
+		"cachedUpgrades": {
+			"derelict-fi": "2.0.2",
+			"derelict-glfw3": "1.1.1",
+			"derelict-assimp3": "1.0.1",
+			"armos": {
+				"path": "/home/tanitta/dev/armos/"
+			},
+			"derelict-util": "2.0.4",
+			"derelict-gl3": "1.0.18",
+			"derelict-ft": "1.1.0",
+			"derelict-sdl2": "2.0.0"
+		}
+	}
+}
