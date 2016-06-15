@@ -3,21 +3,21 @@ import armos;
 class TestApp : ar.BaseApp{
 	this(){}
 	
-	void setup(){}
+	override void setup(){}
 	
-	void update(){}
+	override void update(){}
 	
-	void draw(){}
+	override void draw(){}
 	
-	void keyPressed(int key){}
+	override void keyPressed(int key){}
 	
-	void keyReleased(int key){}
+	override void keyReleased(int key){}
 	
-	void mouseMoved(ar.Vector2i position, int button){}
+	override void mouseMoved(ar.Vector2i position, int button){}
 	
-	void mousePressed(ar.Vector2i position, int button){}
+	override void mousePressed(ar.Vector2i position, int button){}
 	
-	void mouseReleased(ar.Vector2i position, int button){}
+	override void mouseReleased(ar.Vector2i position, int button){}
 }
 
 void main(){ar.run(new TestApp);}
